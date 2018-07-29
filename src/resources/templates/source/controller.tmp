@@ -1,0 +1,11 @@
+import {Post, Get, Body, JsonController, UseAfter} from 'routing-controllers';
+
+@JsonController("/{pascalName}")
+@UseAfter(EventStoreHandler)
+class {pascalName}Controller {
+    constructor(){
+        super();
+    }
+}
+Object.seal({pascalName}Controller);
+export default {pascalName}Controller;

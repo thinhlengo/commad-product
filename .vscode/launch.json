@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "DEBUG",
+            "cwd": "${workspaceRoot}",
+            "sourceMaps": true,
+            "program": "${workspaceRoot}/src/server.ts",
+            "preLaunchTask": "compile",
+            "runtimeExecutable": null,
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "protocol": "inspector",
+            "outFiles": ["${workspaceRoot}/dest/**/*.js"],
+            "env": {
+                "NODE_ENV": "Development",
+                "SINGLE_THREAD": "true"
+            },
+            "args": ["${relativeFile}"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "DEBUG-Windown",
+            "cwd": "${workspaceRoot}",
+            "sourceMaps": true,
+            "program": "${workspaceRoot}/src/server.ts",
+            "preLaunchTask": "compile-w",
+            "runtimeExecutable": null,
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "protocol": "inspector",
+            "outFiles": ["${workspaceRoot}/dest/**/*.js"],
+            "env": {
+                "NODE_ENV": "Development",
+                "SINGLE_THREAD": "true"
+            },
+            "args": ["${relativeFile}"]
+        }
+    ]
+}

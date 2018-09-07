@@ -1,8 +1,11 @@
 import * as fsextra from 'fs-extra';
+import * as path from 'path';
 import {useExpressServer} from 'routing-controllers';
 import {SystemController} from '../controllers/SystemController';
 import {NotFoundUrl} from '../middleware/NotFoundUrl';
 import UserController from '../controllers/UserController';
+import FileController from '../controllers/FileController';
+import DeviceController from '../controllers/DeviceController';
 import {CustomErrorHandler} from '../middleware/CustomErrorHandler';
 
 export class RoutingConfig {
@@ -11,6 +14,7 @@ export class RoutingConfig {
         let express = require('express'); // or you can import it if you have installed typings
         let app = express(); // your created express server
         // app.use() // you can configure it the way you want
+        app.use(express.static(path.join(__dirname, '../../uploads')));
         fsextra.ensureDirSync(folder);
 
         useExpressServer(app, {
@@ -30,7 +34,9 @@ export class RoutingConfig {
             ],
             controllers: [
                 SystemController,
-                UserController
+                UserController,
+                FileController,
+                DeviceController
             ]
         });
         // const app = createExpressServer({

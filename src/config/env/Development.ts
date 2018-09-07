@@ -3,7 +3,7 @@ class Development {
         NAME: 'default',
         HOST: 'localhost',
         POST: 5432,
-        DB_NAME: 'curt-development',
+        DB_NAME: 'product-management',
         USERNAME: '',
         PASSWORD: ''
     }];

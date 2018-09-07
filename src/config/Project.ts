@@ -1,12 +1,14 @@
 class Default {
+    static PROTOTYPE: string = 'http'
     static HOST: string = 'localhost';
     static PORT: number = 3001;
     static PORT_CACHING: number = 3000;
-    static PROJECT_NAME: string = 'Kenry nice';
+    static PROJECT_NAME: string = 'Product management';
     static AUTHENTICATION_EXPIRES: number = 15; // Days
 }
 
 interface IProject {
+    PROTOTYPE: string;
     HOST: string;
     PORT: number;
     PORT_CACHING: number;

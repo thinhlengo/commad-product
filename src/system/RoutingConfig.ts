@@ -7,6 +7,7 @@ import UserController from '../controllers/UserController';
 import FileController from '../controllers/FileController';
 import DeviceController from '../controllers/DeviceController';
 import {CustomErrorHandler} from '../middleware/CustomErrorHandler';
+let bodyParser = require('body-parser');
 
 export class RoutingConfig {
     static config() {
@@ -15,6 +16,8 @@ export class RoutingConfig {
         let app = express(); // your created express server
         // app.use() // you can configure it the way you want
         app.use(express.static(path.join(__dirname, '../../uploads')));
+        app.use(bodyParser.urlencoded({extended: false}));
+        app.use(bodyParser.json());
         fsextra.ensureDirSync(folder);
 
         useExpressServer(app, {
